@@ -8,13 +8,14 @@
 <head>
     <meta charset="utf-8"/>
     <title>{% block title %}My shop{% endblock %}</title>
-    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <link href="{% static "css/style.css" %}" rel="stylesheet">
 </head>
 <body>
+<center>
 <div id="header">
     <a href="/" class="logo">My shop</a>
 </div>
-
+</center>
 <div id="subheader">
     <div class="cart">
     {% with total_items=cart|length %}
@@ -22,7 +23,7 @@
             Your cart:
             <a href="{% url "cart:cart_detail" %}">
                 {{ total_items }} item{{ total_items|pluralize }},
-                ${{ cart.get_total_price }}
+                {{ cart.get_total_price }}RUB
             </a>
         {% else %}
             Your cart is empty.
@@ -30,12 +31,13 @@
     {% endwith %}
 	</div>
 </div>
+</div>
 <div id="content">
     {% block content %}
     {% endblock %}
 </div>
 <div id="footer">
-	<h2>footer (низ сайта)</h2>
+	<h2>footer </h2>
 	</div>
 </div>
 </body>
